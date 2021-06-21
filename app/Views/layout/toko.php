@@ -99,7 +99,7 @@
                                             <li><a href="product-details.html">product details</a></li>
                                             <li><a href="<?php echo base_url('/cart');?>">cart</a></li>
                                             <li><a href="<?php echo base_url('/wishlist');?>">wishlist</a></li>
-                                            <li><a href="checkout.html">checkout</a></li>
+                                            <li><a href="<?php echo base_url('/checkout');?>">checkout</a></li>
                                             <li><a href="team.html">team</a></li>
                                             <li><a href="<?php echo base_url('/login');?>">login & register</a></li>
                                         </ul>
@@ -132,7 +132,7 @@
                                                 <li><a href="product-details.html">product details</a></li>
                                                 <li><a href="<?php echo base_url('/cart');?>">cart</a></li>
                                                 <li><a href="<?php echo base_url('/wishlist');?>">wishlist</a></li>
-                                                <li><a href="checkout.html">checkout</a></li>
+                                                <li><a href="<?php echo base_url('/checkout');?>">checkout</a></li>
                                                 <li><a href="team.html">team</a></li>
                                                 <li><a href="<?php echo base_url('/login');?>">login & register</a></li>
                                             </ul>
@@ -289,7 +289,7 @@
                     </ul>
                     <ul class="shopping__btn">
                         <li><a href="<?php echo base_url('/cart');?>">View Cart</a></li>
-                        <li class="shp__checkout"><a href="checkout.html">Checkout</a></li>
+                        <li class="shp__checkout"><a href="<?php echo base_url('/checkout');?>">Checkout</a></li>
                     </ul>
                 </div>
             </div>

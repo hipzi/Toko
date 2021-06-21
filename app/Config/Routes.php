@@ -39,6 +39,8 @@ $routes->get('/cart', 'Home::cart');
 $routes->get('/wishlist', 'Home::wishlist');
 $routes->get('/checkout', 'Home::checkout');
 
+$routes->get('/admin', 'Home::admin');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

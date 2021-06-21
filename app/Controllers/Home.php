@@ -33,4 +33,9 @@ class Home extends BaseController
 	{
 		return view('toko/checkout');
 	}
+
+	public function admin()
+	{
+		return view('layout/admin');
+	}
 }
