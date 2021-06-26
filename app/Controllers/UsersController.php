@@ -109,7 +109,7 @@ class UsersController extends BaseController
                 $this->setUserSession($user);
 
                 if($user['role'] == 'Penjual'){
-                    return redirect()->to(base_url('/seller/admin'));
+                    return redirect()->to(base_url('/seller'));
                 }elseif($user['role'] == 'Pembeli'){
                     return redirect()->to(base_url('/buyer/shop'));
                 }
