@@ -711,11 +711,13 @@
     color: #4b4b4b;
     text-transform: uppercase;
 }
+
 .htc__login__btn {
     text-align: center;
 }
+
 .login input:last-child {
-    margin-top: 14px;
+    margin-top: 1px !important;
 }
 .htc__social__connect h2 {
     color: #000;

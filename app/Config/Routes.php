@@ -32,14 +32,38 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('/login', 'Home::login');
-$routes->get('/shop', 'Home::shop');
-$routes->get('/cart', 'Home::cart');
-$routes->get('/wishlist', 'Home::wishlist');
-$routes->get('/checkout', 'Home::checkout');
+// $routes->get('/shop', 'Home::shop');
+// $routes->get('/cart', 'Home::cart');
+// $routes->get('/wishlist', 'Home::wishlist');
+// $routes->get('/checkout', 'Home::checkout');
 
-$routes->get('/admin', 'Home::admin');
+// $routes->get('/admin', 'Home::admin');
+
+// $routes->get('/user/login', 'UsersController::login');
+// $routes->get('/user/register', 'UsersController::register');
+// $routes->post('/user/data_register', 'UsersController::data_register');
+// $routes->post('/user/data_login', 'UsersController::data_login');
+// $routes->get('/user/logout', 'UserController::logout');
+
+$routes->get('/', 'Home::index');
+
+$routes->group('user', function ($routes) {
+	$routes->get('login', 'UsersController::login');
+	$routes->get('register', 'UsersController::register');
+	$routes->post('data_register', 'UsersController::data_register');
+	$routes->post('data_login', 'UsersController::data_login');
+	$routes->get('logout', 'UsersController::logout');
+});
+
+$routes->group('buyer', ['filter' => 'auth'], function ($routes) {
+    $routes->get('shop', 'ShopController::index');
+});
+
+$routes->group('seller', ['filter' => 'auth'], function ($routes) {
+    $routes->get('/', 'AdminController::index');
+});
+
+
 
 /*
  * --------------------------------------------------------------------

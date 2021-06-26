@@ -16,57 +16,46 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="htc__login__register__wrap">
-                    <!-- Start Single Content -->
                     <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
-                        <form class="login" method="post">
-                            <input type="text" placeholder="User Name*">
-                            <input type="password" placeholder="Password*">
+                        <?php if (isset($validation)) : ?>
+                            <div class="col-12">
+                                <div class="alert alert-danger" role="alert">
+                                    <?= $validation->listErrors() ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                        <form class="login" method="post" action="<?= base_url('/user/data_login') ?>">
+                            <?= csrf_field(); ?>
+                            <input type="text" placeholder="Username*" id="username" name="username" value="<?= old('username'); ?>">
+                            <input type="password" placeholder="Password*" id="password" name="password">
+                        
+                            <div class="htc__login__btn mt--30">
+                                <a>
+                                <input type="submit" value="Login" style="border-style: none;"/>
+                                </a>
+                            </div>
+
                         </form>
-                        <div class="tabs__checkbox">
-                            <input type="checkbox">
-                            <span> Remember me</span>
-                            <span class="forget"><a href="#">Forget Pasword?</a></span>
-                        </div>
-                        <div class="htc__login__btn mt--30">
-                            <a href="#">Login</a>
-                        </div>
-                        <div class="htc__social__connect">
-                            <h2>Or Login With</h2>
-                            <ul class="htc__soaial__list">
-                                <li><a class="bg--twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-
-                                <li><a class="bg--instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-
-                                <li><a class="bg--facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-
-                                <li><a class="bg--googleplus" href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
-                            </ul>
-                        </div>
                     </div>
                     <!-- End Single Content -->
+                    
                     <!-- Start Single Content -->
                     <div id="register" role="tabpanel" class="single__tabs__panel tab-pane fade">
-                        <form class="login" method="post">
-                            <input type="text" placeholder="Name*">
-                            <input type="email" placeholder="Email*">
-                            <input type="password" placeholder="Password*">
+                        <form class="login" method="post" action="<?= base_url('/user/data_register') ?>">
+                            <?= csrf_field(); ?> 
+                            <input type="text" placeholder="Nama*" id="nama" name="nama" value="<?= old('nama'); ?>">
+                            <input type="text" placeholder="Username*" id="username" name="username" value="<?= old('username'); ?>">
+                            <input type="email" placeholder="Email*" id="email" name="email" value="<?= old('email'); ?>">
+                            <input type="text" placeholder="No Hp*" id="no_hp" name="no_hp" value="<?= old('no_hp'); ?>">
+                            <input type="text" placeholder="Alamat*" id="alamat" name="alamat" value="<?= old('alamat'); ?>">
+                            <input type="password" placeholder="Password*" id="password" name="password">
+
+                            <div class="htc__login__btn">
+                                <a>
+                                <input type="submit" value="Register" style="border-style: none"/>
+                                </a>
+                            </div>
                         </form>
-                        <div class="tabs__checkbox">
-                            <input type="checkbox">
-                            <span> Remember me</span>
-                        </div>
-                        <div class="htc__login__btn">
-                            <a href="#">register</a>
-                        </div>
-                        <div class="htc__social__connect">
-                            <h2>Or Login With</h2>
-                            <ul class="htc__soaial__list">
-                                <li><a class="bg--twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                <li><a class="bg--instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                <li><a class="bg--facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a class="bg--googleplus" href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
-                            </ul>
-                        </div>
                     </div>
                     <!-- End Single Content -->
                 </div>

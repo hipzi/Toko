@@ -35,6 +35,7 @@
                             <button data-filter=".cat--2">Bags</button>
                             <button data-filter=".cat--3">Decoration</button>
                             <button data-filter=".cat--4">Accessories</button>
+                            <a href="<?php echo base_url('/user/logout');?>">Logout</a>
                         </div>
                         <div class="filter__box">
                             <a class="filter__menu" href="#">filter</a>

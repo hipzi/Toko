@@ -6,12 +6,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
-
-
-    <!-- <title>{{ config('app.name', 'Aplikasi Booking Webinar') }}</title> -->
-
     <!-- Scripts -->
     <script src="<?php echo base_url('js/app.js'); ?>" defer></script>
 
@@ -131,7 +125,7 @@
                         <!-- @endauth -->
                     </a>
                     <div style="margin: auto" class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item"  href="{{ route('logout') }}"><i class="fa fa-sign-out pull-right"></i>Log Out</a>
+                        <a class="dropdown-item"  href="<?php echo base_url('/user/logout');?>"><i class="fa fa-sign-out pull-right"></i>Log Out</a>
                     </div>
                     </li>
 

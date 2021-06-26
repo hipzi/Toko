@@ -9,16 +9,6 @@ class Home extends BaseController
 		return view('layout/toko');
 	}
 
-	public function login()
-	{
-		return view('toko/login-register');
-	}
-
-	public function shop()
-	{
-		return view('toko/shop');
-	}
-
 	public function cart()
 	{
 		return view('toko/cart');
@@ -34,8 +24,4 @@ class Home extends BaseController
 		return view('toko/checkout');
 	}
 
-	public function admin()
-	{
-		return view('layout/admin');
-	}
 }
