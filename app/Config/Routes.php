@@ -57,6 +57,7 @@ $routes->group('user', function ($routes) {
 
 $routes->group('buyer', ['filter' => 'auth'], function ($routes) {
     $routes->get('shop', 'ShopController::index');
+	$routes->get('wishlist/(:any)', 'ShopController::wishlist/$1');
 });
 
 $routes->group('seller', ['filter' => 'auth'], function ($routes) {

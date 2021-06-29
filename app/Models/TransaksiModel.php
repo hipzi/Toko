@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use Config\Database;
 
 class TransaksiModel extends Model
 {
@@ -21,22 +22,35 @@ class TransaksiModel extends Model
 	protected $dateFormat           = 'datetime';
 	protected $createdField         = 'created_at';
 	protected $updatedField         = 'updated_at';
-	// protected $deletedField         = 'deleted_at';
 
-	// Validation
-	// protected $validationRules      = [];
-	// protected $validationMessages   = [];
-	// protected $skipValidation       = false;
-	// protected $cleanValidationRules = true;
+	public function wishlist($id_produk)
+	{
+		$db = Database::connect();
+		$builder = $db->table($this->table);
 
-	// Callbacks
-	// protected $allowCallbacks       = true;
-	// protected $beforeInsert         = [];
-	// protected $afterInsert          = [];
-	// protected $beforeUpdate         = [];
-	// protected $afterUpdate          = [];
-	// protected $beforeFind           = [];
-	// protected $afterFind            = [];
-	// protected $beforeDelete         = [];
-	// protected $afterDelete          = [];
+		$kondisi = array(
+			'id_produk' => $id_produk,
+			'id_users' => session()->get('id'),
+			'status' => 1
+		);
+
+		$builder->where($kondisi);
+		$result = $builder->countAllResults();
+
+		if ( $result > 0 ) 
+		{
+			$this->where($kondisi)->delete();
+		} 
+		else 
+		{
+			$this->insert([
+				'id_produk' => $id_produk,
+				'id_users' => session()->get('id'),
+				'status' => 1,
+				'jumlah' => 1,
+			]);
+		}
+	}
+	
+
 }
