@@ -181,6 +181,7 @@
 }
 .ti-heart:before {
 	content: "\e634";
+	icon_bg: blue;
 }
 .ti-heart-broken:before {
 	content: "\e635";

@@ -38,7 +38,7 @@
                         <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="images/logo/logo.png" alt="logo">
+                                    <img src="<?php echo base_url('images/logo/logo.png');?>" alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                                                     <li>
                                                         <div class="mega-item-img">
                                                             <a href="<?php echo base_url('/buyer/shop');?>">
-                                                                <img src="images/feature-img/3.png" alt="">
+                                                                <img src="<?php echo base_url('images/feature-img/3.png');?>" alt="">
                                                             </a>
                                                         </div>
                                                     </li>
@@ -197,20 +197,20 @@
                     <div class="off__contact">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="images/logo/logo.png" alt="logo">
+                                <img src="<?php echo base_url('images/logo/logo.png');?>" alt="logo">
                             </a>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
                     </div>
                     <ul class="sidebar__thumd">
-                        <li><a href="#"><img src="images/sidebar-img/1.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/2.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/3.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/4.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/5.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/6.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/7.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/8.jpg" alt="sidebar images"></a></li>
+                        <li><a href="#"><img src="<?php echo base_url('images/sidebar-img/1.jpg');?>" alt="sidebar images"></a></li>
+                        <li><a href="#"><img src="<?php echo base_url('images/sidebar-img/2.jpg');?>" alt="sidebar images"></a></li>
+                        <li><a href="#"><img src="<?php echo base_url('images/sidebar-img/3.jpg');?>" alt="sidebar images"></a></li>
+                        <li><a href="#"><img src="<?php echo base_url('images/sidebar-img/4.jpg');?>" alt="sidebar images"></a></li>
+                        <li><a href="#"><img src="<?php echo base_url('images/sidebar-img/5.jpg');?>" alt="sidebar images"></a></li>
+                        <li><a href="#"><img src="<?php echo base_url('images/sidebar-img/6.jpg');?>" alt="sidebar images"></a></li>
+                        <li><a href="#"><img src="<?php echo base_url('images/sidebar-img/7.jpg');?>" alt="sidebar images"></a></li>
+                        <li><a href="#"><img src="<?php echo base_url('images/sidebar-img/8.jpg');?>" alt="sidebar images"></a></li>
                     </ul>
                     <div class="offset__widget">
                         <div class="offset__single">
@@ -259,7 +259,7 @@
                         <div class="shp__single__product">
                             <div class="shp__pro__thumb">
                                 <a href="#">
-                                    <img src="images/product/sm-img/1.jpg" alt="product images">
+                                    <img src="<?php echo base_url('images/product/sm-img/1.jpg');?>" alt="product images">
                                 </a>
                             </div>
                             <div class="shp__pro__details">
@@ -274,7 +274,7 @@
                         <div class="shp__single__product">
                             <div class="shp__pro__thumb">
                                 <a href="#">
-                                    <img src="images/product/sm-img/2.jpg" alt="product images">
+                                    <img src="<?php echo base_url('images/product/sm-img/2.jpg');?>" alt="product images">
                                 </a>
                             </div>
                             <div class="shp__pro__details">
