@@ -46,6 +46,8 @@ $routes->setAutoRoute(true);
 // $routes->get('/user/logout', 'UserController::logout');
 
 $routes->get('/', 'Home::index');
+$routes->get('/quotes', 'Home::quotes');
+$routes->get('/video', 'Home::video');
 
 $routes->group('user', function ($routes) {
 	$routes->get('login', 'UsersController::login');
@@ -57,7 +59,6 @@ $routes->group('user', function ($routes) {
 
 $routes->group('buyer', ['filter' => 'auth'], function ($routes) {
     $routes->get('shop', 'ShopController::index');
-	$routes->get('wishlist/(:any)', 'ShopController::wishlist/$1');
 });
 
 $routes->group('seller', ['filter' => 'auth'], function ($routes) {

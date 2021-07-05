@@ -24,4 +24,13 @@ class Home extends BaseController
 		return view('toko/checkout');
 	}
 
+	public function quotes()
+	{
+		return view('toko/quotes');
+	}
+
+	public function video()
+	{
+		return view('toko/video');
+	}
 }

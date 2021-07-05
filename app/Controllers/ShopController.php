@@ -3,8 +3,6 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\ProdukModel;
-use App\Models\TransaksiModel;
 
 class ShopController extends BaseController
 {
@@ -17,19 +15,6 @@ class ShopController extends BaseController
     }
 	public function index()
 	{
-        $produk = new ProdukModel();
-        
-        $data['produk'] = $produk->findAll();
-
-		return view("toko/shop", $data);
+		return view("toko/shop");
 	}
-
-    public function wishlist($id_produk)
-    {
-        $transaksi = new TransaksiModel();
-        $transaksi->wishlist($id_produk);
-
-        return redirect()->to('/buyer/shop');
-
-    }
 }
