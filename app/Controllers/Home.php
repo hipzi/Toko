@@ -6,11 +6,6 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('layout/toko');
-	}
-
-	public function home()
-	{
 		return view('toko/homepage');
 	}
 

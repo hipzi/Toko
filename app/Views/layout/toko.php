@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="<?php echo base_url('css/responsive.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('css/custom.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('css/templatemo-style.css'); ?>">
-    <!-- <link rel="stylesheet" href="<?php //echo base_url('css/animate.css'); ?>"> -->
 
     <script src="<?php echo base_url('js/vendor/modernizr-2.8.3.min.js'); ?>"></script>
 </head>
@@ -46,7 +45,7 @@
                         <div class="col-md-8 col-lg-8 col-sm-6 col-xs-6">
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu">
-                                    <li class="drop"><a href="index.html">Home</a></li>
+                                    <li class="drop"><a href="<?php echo base_url('/');?>">Home</a></li>
                                     <li class="drop"><a href="portfolio-card-box-2.html">portfolio</a>
                                         <ul class="dropdown">
                                             <li><a href="portfolio-card-box-2.html">portfolio</a></li>
@@ -114,7 +113,7 @@
                             <div class="mobile-menu clearfix visible-xs visible-sm">
                                 <nav id="mobile_dropdown">
                                     <ul>
-                                        <li><a href="index.html">Home</a></li>
+                                        <li class="drop"><a href="<?php echo base_url('/');?>">Home</a></li>
                                         <li><a href="#">portfolio</a>
                                             <ul>
                                                 <li><a href="portfolio-card-box-2.html">portfolio</a></li>
@@ -320,7 +319,7 @@
                                     All Right Reserved.</p>
                                 </div>
                                 <ul class="footer__menu">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li class="drop"><a href="<?php echo base_url('/');?>">Home</a></li>
                                     <li><a href="<?php echo base_url('/buyer/shop');?>">Product</a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
