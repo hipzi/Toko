@@ -46,7 +46,7 @@
   margin: auto;
   position: absolute;
   right: 0;
-  top: 32px;
+  /* top: 32px; */
   width: 100%;
 }
 
@@ -410,6 +410,7 @@
   align-items: center;
   display: flex;
   height: 134px;
+  background-color: #c00;
 }
 .header--3 .sticky__header.scroll-header {
   animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;

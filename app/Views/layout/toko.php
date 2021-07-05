@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="<?php echo base_url('css/style.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('css/responsive.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('css/custom.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('css/templatemo-style.css'); ?>">
+    <!-- <link rel="stylesheet" href="<?php //echo base_url('css/animate.css'); ?>"> -->
 
     <script src="<?php echo base_url('js/vendor/modernizr-2.8.3.min.js'); ?>"></script>
 </head>
@@ -26,9 +28,11 @@
     <!-- Body main wrapper start -->
     <div class="wrapper fixed__footer">
         <!-- Start Header Style -->
-        <header id="header" class="htc-header header--3 bg__white">
+        <header id="header" class="htc-header">
+        <!-- <header id="header" class="htc-header header--3 bg__white"> -->
             <!-- Start Mainmenu Area -->
-            <div id="sticky-header-with-topbar" class="mainmenu__area sticky__header">
+            <!-- <div id="sticky-header-with-topbar" class="sticky__header"> -->
+            <div id="sticky-header-with-topbar" class="mainmenu__area sticky__header" style="background-color: #fff">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">
@@ -156,7 +160,7 @@
                 </div>
             </div>
             <!-- End Mainmenu Area -->
-        <!-- </header> -->
+        </header>
         <!-- End Header Style -->
         
         <!-- Comment -->
@@ -303,6 +307,7 @@
 
         <!-- Start Footer Area -->
         <footer class="htc__foooter__area gray-bg">
+        <!-- <footer> -->
             <div class="container">
                 <!-- Start Copyright Area -->
                 <div class="htc__copyright__area">
@@ -333,7 +338,7 @@
     <!-- Isinya -->
     <?= $this->renderSection('quickview-product') ?>
     <!-- End Isinya -->
-    
+
     <script src="<?php echo base_url('js/vendor/jquery-1.12.0.min.js'); ?>"></script>
     <script src="<?php echo base_url('js/bootstrap.min.js'); ?>"></script>
     <script src="<?php echo base_url('js/plugins.js'); ?>"></script>
@@ -341,6 +346,8 @@
     <script src="<?php echo base_url('js/owl.carousel.min.js'); ?>"></script>
     <script src="<?php echo base_url('js/waypoints.min.js'); ?>"></script>
     <script src="<?php echo base_url('js/main.js'); ?>"></script>
+
+    <?= $this->renderSection('script') ?>
     
 </body>
 

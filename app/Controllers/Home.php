@@ -9,6 +9,11 @@ class Home extends BaseController
 		return view('layout/toko');
 	}
 
+	public function home()
+	{
+		return view('toko/homepage');
+	}
+
 	public function cart()
 	{
 		return view('toko/cart');

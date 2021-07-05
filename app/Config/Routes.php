@@ -46,6 +46,7 @@ $routes->setAutoRoute(true);
 // $routes->get('/user/logout', 'UserController::logout');
 
 $routes->get('/', 'Home::index');
+$routes->get('/home', 'Home::home');
 
 $routes->group('user', function ($routes) {
 	$routes->get('login', 'UsersController::login');

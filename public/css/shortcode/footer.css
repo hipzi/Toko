@@ -121,6 +121,7 @@
   right: 0;
   width: 100%;
   z-index: -99999;
+  padding: 0;
 }
 .ft__widget.contact__us {
   left: 58px;
