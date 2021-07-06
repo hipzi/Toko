@@ -50,12 +50,7 @@
                 <div class="menu_section">
                     <!-- Home, List, Calendar, Report -->
                     <ul class="nav side-menu">
-                    <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                        <li><a href="{{ route('dashboard.chart') }}">Dashboard</a></li>
-                        </ul>
-                    </li>
-                    <li><a><i class="fa fa-edit"></i> Webinar <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-edit"></i> Product <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         <li><a href="{{ route('booking.new', ['tipe_zoom'=>'webinar']) }}">Booking Webinar</a></li>
                         <li><a href="{{ route('booking.list', ['tipe_zoom'=>'webinar']) }}">Webinar Saya</a></li>
@@ -66,7 +61,7 @@
                         </ul>
                     </li>
                     <!-- @if(!auth()->user()->isMahasiswa()) -->
-                    <li><a><i class="fa fa-edit"></i> Meeting <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-edit"></i> Users <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         <li><a href="{{ route('booking.new', ['tipe_zoom'=>'meeting']) }}">Booking Meeting</a></li>
                         <li><a href="{{ route('booking.list', ['tipe_zoom'=>'meeting']) }}">Meeting Saya</a></li>
@@ -77,25 +72,11 @@
                         </ul>
                     </li>
                     <!-- @endif -->
-                    <li><a><i class="fa fa-desktop"></i> Calendar <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-desktop"></i> Setting <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         <li><a href="{{ route('calendar.view') }}">Calendar</a></li>
                         </ul>
                     </li>
-                    <!-- @if(auth()->user()->isAdmin()) -->
-                    <li><a><i class="fa fa-list"></i> Data <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                        <li><a href="{{ route('admin.users.view') }}">User</a></li>
-                        <li><a href="{{ route('admin.unit.view') }}">Unit</a></li>
-                        <li><a href="{{ route('admin.host.accounts') }}">Host</a></li>
-                        </ul>
-                    </li>
-                    <li><a><i class="fa fa-table"></i> Report <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                        <li><a href="{{route('export.form')}}">Export</a></li>
-                        </ul>
-                    </li>
-                    <!-- @endif -->
                     </ul>
                 </div>
 
@@ -136,7 +117,7 @@
         <!-- /top navigation -->
 
         <main>
-            <!-- @yield('content') -->
+        <?= $this->renderSection('content') ?>
         </main>
 
         </div>

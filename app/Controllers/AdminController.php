@@ -17,4 +17,9 @@ class AdminController extends BaseController
 	{
 		return view("layout/admin");
 	}
+    public function create()
+    {
+        //$data['produk'] = $this->ProdukModel->getAll();
+        return view("admin/create");
+    }
 }
