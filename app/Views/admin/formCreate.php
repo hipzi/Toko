@@ -21,7 +21,7 @@
                             </button>
                         </div>
                     <?php endif; ?>
-                    <form method="post" action="<?= base_url('/seller/save') ?>">
+                    <form method="post" action="<?= base_url('/seller/save') ?>" enctype="multipart/form-data">
                         <?= csrf_field(); ?>
                         
                         <div class="form-group">
