@@ -13,7 +13,7 @@ class AdminController extends BaseController
             echo 'Access denied';
             exit;
         }
-        $this->produk = new ProdukModel;
+        $this->produk = new ProdukModel();
     }
 	public function index()
 	{
@@ -28,6 +28,7 @@ class AdminController extends BaseController
     {
         return view('admin/formCreate');
     }
+
     public function save()
 	{
 		if (!$this->validate([
@@ -66,7 +67,7 @@ class AdminController extends BaseController
             return redirect()->back()->withInput();
         }
 
-        $this->seller->insert([
+        $this->produk->insert([
 			'nama' => $this->request->getVar('nama'),
             'foto' => $this->request->getVar('foto'),
 			'jumlah' => $this->request->getVar('jumlah'),

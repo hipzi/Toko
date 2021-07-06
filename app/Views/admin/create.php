@@ -18,7 +18,6 @@
                                     <th>Jumlah</th>
                                     <th>Harga</th>
                                     <th>Keterangan</th>
-
                                     <th>Action</th>
                                 </tr>
                                 
