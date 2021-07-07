@@ -21,7 +21,6 @@
                                     <th>Action</th>
                                 </tr>
                                 <?php
-<<<<<<< HEAD
                                     $no  = 1;
                                     foreach ($produk as $row) {
                                     ?>
@@ -40,23 +39,7 @@
                                     <?php
                                     }
                                     ?>
-=======
-                                $no  = 1;
-                                foreach ($produk as $row) {
-                                ?>
-                                    <tr>
-                                        <td><?= $no++; ?></td>
-                                        <td><?= $row->nama; ?></td>
-                                        <td><img width="150px" class="img-thumbnail" src="<?= base_url() . "/uploads/foto/" . $row->foto; ?>"></td>
-                                        <td><?= $row->jumlah; ?></td>
-                                        <td><?= $row->harga; ?></td>
-                                        <td><?= $row->keterangan; ?></td>
-                                        <td><a class="btn btn-info">Download</a></td>
-                                    </tr>
-                                <?php
-                                }
-                                ?>
->>>>>>> 12b7068cd05a35d6989e8b6e5b7e02199477eabb
+
                             </table>
 			        </div>
 		        </div>
