@@ -21,9 +21,6 @@
     <div class="portfolio-grid-area bg__white pt--1 pb--100">
         <div class="container">
             <div class="portfolio-menu-active gutter-btn mb--50 text-center">
-                <button class="active" data-filter="*">All</button>
-                <button data-filter=".cat2">Mental Health</button>
-                <button data-filter=".cat3">Motivate</button>
             </div>
             <div class="portfolio-style">
                 <div class="row grid">
