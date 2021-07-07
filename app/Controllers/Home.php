@@ -33,4 +33,9 @@ class Home extends BaseController
 	{
 		return view('toko/video');
 	}
+
+	public function sound()
+	{
+		return view('toko/sound');
+	}
 }

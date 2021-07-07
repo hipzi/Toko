@@ -48,6 +48,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/quotes', 'Home::quotes');
 $routes->get('/video', 'Home::video');
+$routes->get('/sound', 'Home::sound');
 
 $routes->group('user', function ($routes) {
 	$routes->get('login', 'UsersController::login');
