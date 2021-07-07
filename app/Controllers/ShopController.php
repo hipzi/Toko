@@ -28,13 +28,12 @@ class ShopController extends BaseController
 	}
     public function cart()
 	{
-        return view('toko/cart');
-		// return view("toko/shop");
+        $data['cart'] = $this->transaksi->getCart();
+        return view('toko/cart', $data);
 	}
 
     public function add_cart()
 	{
-
         $this->transaksi->insert([
 			'id_produk' => $this->request->getVar('id_produk'),
             'id_users' => $this->request->getVar('id_users'),
@@ -42,6 +41,15 @@ class ShopController extends BaseController
 			'jumlah' => $this->request->getVar('jumlah')
         ]);
         session()->setFlashdata('message', 'Berhasil Memasukan Produk ke Keranjang');
+        return redirect()->to('/buyer/cart');
+	}
+
+    public function change_quantity($id)
+	{
+        $this->transaksi->update($id, [
+			'jumlah' => $this->request->getVar('jumlah')
+        ]);
+        session()->setFlashdata('message', 'Update Jumlah Produk Berhasil');
         return redirect()->to('/buyer/cart');
 	}
 }

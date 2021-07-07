@@ -62,6 +62,8 @@ $routes->group('buyer', ['filter' => 'auth'], function ($routes) {
     $routes->get('shop', 'ShopController::index');
 	$routes->get('cart', 'ShopController::cart');
 	$routes->post('add_cart', 'ShopController::add_cart');
+	$routes->post('checkout', 'ShopController::checkout');
+	$routes->post('change_quantity/(:num)', 'ShopController::change_quantity/$1');
 });
 
 $routes->group('seller', ['filter' => 'auth'], function ($routes) {

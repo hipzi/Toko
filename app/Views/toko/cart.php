@@ -91,22 +91,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <?php
+                        $total_harga = 0;
+                        foreach ($cart as $row) {
+                        ?>
                             <tr>
-                                <td class="product-thumbnail"><a href="#"><img src="images/product/4.png" alt="product img" /></a></td>
-                                <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
-                                <td class="product-price"><span class="amount">£165.00</span></td>
-                                <td class="product-quantity"><input type="number" value="1" /></td>
-                                <td class="product-subtotal">£165.00</td>
+                                <td class="product-thumbnail"><a href="#"><img width="270px" height="270px" src="<?= base_url() . "/uploads/foto/" . $row['foto']; ?>" alt="product images"></a></td>
+                                <td class="product-name"><a href="#"><?=$row['namaProduk'];?></a></td>
+                                <td class="product-price"><span class="amount"><?=$row['harga'];?></span></td>
+                                <td class="product-quantity"><input type="number" name="jumlah" value="<?= $row['jmlTransaksi']; ?>"/>
+                                    <br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal">Ubah</button>
+                                    <!-- <a href="#" type="button" class="btn btn-success btn-md" class="btn btn-info" style="font-size: 10pt;" data-toggle="modal" data-target="#myModal<?php echo $row['idTransaksi']; ?>">Ubah</a> -->
+                                </td>
+                                <td class="product-subtotal"><?=$harga_perbarang = $row['jmlTransaksi']*$row['harga'];?></td>
+                                
                                 <td class="product-remove"><a href="#">X</a></td>
                             </tr>
-                            <tr>
-                                <td class="product-thumbnail"><a href="#"><img src="images/product/3.png" alt="product img" /></a></td>
-                                <td class="product-name"><a href="#">Vestibulum dictum magna</a></td>
-                                <td class="product-price"><span class="amount">£50.00</span></td>
-                                <td class="product-quantity"><input type="number" value="1" /></td>
-                                <td class="product-subtotal">£50.00</td>
-                                <td class="product-remove"><a href="#">X</a></td>
-                            </tr>
+                        <?php
+                        $total_harga += $harga_perbarang;  
+                        }
+                        ?>
                         </tbody>
                     </table>
                 </div>
@@ -126,37 +130,17 @@
                     <div class="col-md-4 col-sm-5 col-xs-12">
                         <div class="cart_totals">
                             <h2>Cart Totals</h2>
+                            <br>
                             <table>
                                 <tbody>
-                                    <tr class="cart-subtotal">
-                                        <th>Subtotal</th>
-                                        <td><span class="amount">£215.00</span></td>
-                                    </tr>
-                                    <tr class="shipping">
-                                        <th>Shipping</th>
-                                        <td>
-                                            <ul id="shipping_method">
-                                                <li>
-                                                    <input type="radio" /> 
-                                                    <label>
-                                                        Flat Rate: <span class="amount">£7.00</span>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <input type="radio" /> 
-                                                    <label>
-                                                        Free Shipping
-                                                    </label>
-                                                </li>
-                                                <li></li>
-                                            </ul>
-                                            <p><a class="shipping-calculator-button" href="#">Calculate Shipping</a></p>
-                                        </td>
-                                    </tr>
                                     <tr class="order-total">
                                         <th>Total</th>
                                         <td>
-                                            <strong><span class="amount">£215.00</span></strong>
+                                            <strong><span class="amount">
+                                            <?php
+                                            echo $total_harga;
+                                            ?>
+                                            </span></strong>
                                         </td>
                                     </tr>                                           
                                 </tbody>
@@ -172,5 +156,36 @@
     </div>
 </div>
 </div>
+
+    <!-- Modal Edit Product-->
+    <form action="<?= base_url("/buyer/change_quantity/". $row['idTransaksi']); ?>" method="post">
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="padding-top:10px;">Edit Jumlah Produk : <?=$row['namaProduk'];?></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top:-20px;">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            
+                <div class="form-group">
+                    <label>Jumlah Produk</label>
+                    <input type="number" class="form-control jml_name" name="jumlah" placeholder="Product Name" value="<?=$row['jmlTransaksi'];?>">
+                </div>
+            
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" name="product_id" class="product_id">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </form>
+    <!-- End Modal Edit Product-->
+
 <!-- cart-main-area end -->
 <?= $this->endSection('content'); ?>

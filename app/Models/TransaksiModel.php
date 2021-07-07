@@ -51,6 +51,24 @@ class TransaksiModel extends Model
 			]);
 		}
 	}
-	
+
+	public function getCart()
+    {
+        return $this->db->table('transaksi')
+        ->select('transaksi.id as idTransaksi', 'transaksi.jumlah as jmlTransaksi', 'transaksi.*')
+		->select('transaksi.jumlah as jmlTransaksi')
+		->select('transaksi.*')
+		->select('users.id as idUser')
+		->select('users.nama as namaUser')
+		->select('users.*')
+		->select('produk.id as idProduk')
+		->select('produk.nama as namaProduk')
+		->select('produk.jumlah as jmlProduk')
+		->select('produk.*')
+		->join('users','users.id=transaksi.id_users')
+        ->join('produk', 'produk.id=transaksi.id_produk')
+		->where('users.id', session()->get('id'))
+        ->get()->getResultArray();  
+    }	
 
 }
