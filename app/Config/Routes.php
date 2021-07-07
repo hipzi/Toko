@@ -59,6 +59,8 @@ $routes->group('user', function ($routes) {
 
 $routes->group('buyer', ['filter' => 'auth'], function ($routes) {
     $routes->get('shop', 'ShopController::index');
+	$routes->get('cart', 'ShopController::cart');
+	$routes->post('add_cart', 'ShopController::add_cart');
 });
 
 $routes->group('seller', ['filter' => 'auth'], function ($routes) {
