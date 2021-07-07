@@ -47,12 +47,7 @@
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu">
                                     <li class="drop"><a href="<?php echo base_url('/');?>">Home</a></li>
-                                    <li class="drop"><a href="portfolio-card-box-2.html">portfolio</a>
-                                        <ul class="dropdown">
-                                            <li><a href="portfolio-card-box-2.html">portfolio</a></li>
-                                            <li><a href="single-portfolio.html">Single portfolio</a></li>
-                                        </ul>
-                                    </li>
+                                    
                                     <li class="drop"><a href="#">Content</a>
                                         <ul class="dropdown">
                                             <li><a href="<?php echo base_url('/quotes');?>">Quotes</a></li>
@@ -60,55 +55,9 @@
                                         </ul>
                                     </li>
                                     <li class="drop"><a href="<?php echo base_url('/buyer/shop');?>">Shop</a>
-                                        <ul class="dropdown mega_dropdown">
-                                            <!-- Start Single Mega MEnu -->
-                                            <li><a class="mega__title" href="<?php echo base_url('/buyer/shop');?>">shop layout</a>
-                                                <ul class="mega__item">
-                                                    <li><a href="<?php echo base_url('/buyer/shop');?>">default shop</a></li>
-                                                </ul>
-                                            </li>
-                                            <!-- End Single Mega MEnu -->
-                                            <!-- Start Single Mega MEnu -->
-                                            <li><a class="mega__title" href="<?php echo base_url('/buyer/shop');?>">product details layout</a>
-                                                <ul class="mega__item">
-                                                    <li><a href="product-details.html">tab style 1</a></li></li>
-                                                </ul>
-                                            </li>
-                                            <!-- End Single Mega MEnu -->
-                                            <!-- Start Single Mega MEnu -->
-                                            <li>
-                                                <ul class="mega__item">
-                                                    <li>
-                                                        <div class="mega-item-img">
-                                                            <a href="<?php echo base_url('/buyer/shop');?>">
-                                                                <img src="images/feature-img/3.png" alt="">
-                                                            </a>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <!-- End Single Mega MEnu -->
-                                        </ul>
+                                        
                                     </li>
-                                    <li class="drop"><a href="#">pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="about.html">about</a></li>
-                                            <li><a href="#">testimonials <span><i class="zmdi zmdi-chevron-right"></i></span></a>
-                                                <ul class="lavel-dropdown">
-                                                    <li><a href="customer-review.html">customer review</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="<?php echo base_url('/buyer/shop');?>">shop</a></li>
-                                            <li><a href="shop-sidebar.html">shop sidebar</a></li>
-                                            <li><a href="product-details.html">product details</a></li>
-                                            <li><a href="<?php echo base_url('/cart');?>">cart</a></li>
-                                            <li><a href="<?php echo base_url('/wishlist');?>">wishlist</a></li>
-                                            <li><a href="<?php echo base_url('/checkout');?>">checkout</a></li>
-                                            <li><a href="team.html">team</a></li>
-                                            <li><a href="<?php echo base_url('/user/login');?>">login & register</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">contact</a></li>
+                                    
                                 </ul>
                             </nav>
                             <div class="mobile-menu clearfix visible-xs visible-sm">
@@ -151,8 +100,7 @@
                             <ul class="menu-extra">
                                 <li class="search search__open hidden-xs"><span class="ti-search"></span></li>
                                 <li><a href="<?php echo base_url('/user/login');?>"><span class="ti-user"></span></a></li>
-                                <li class="cart__menu"><span class="ti-shopping-cart"></span></li>
-                                <li class="toggle__menu hidden-xs hidden-sm"><span class="ti-menu"></span></li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -190,61 +138,7 @@
             <!-- Comment -->
             <!-- Start Offset MEnu -->
             <div class="offsetmenu">
-                <div class="offsetmenu__inner">
-                    <div class="offsetmenu__close__btn">
-                        <a href="#"><i class="zmdi zmdi-close"></i></a>
-                    </div>
-                    <div class="off__contact">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="images/logo/logo.png" alt="logo">
-                            </a>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
-                    </div>
-                    <ul class="sidebar__thumd">
-                        <li><a href="#"><img src="images/sidebar-img/1.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/2.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/3.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/4.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/5.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/6.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/7.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/8.jpg" alt="sidebar images"></a></li>
-                    </ul>
-                    <div class="offset__widget">
-                        <div class="offset__single">
-                            <h4 class="offset__title">Language</h4>
-                            <ul>
-                                <li><a href="#"> Engish </a></li>
-                                <li><a href="#"> French </a></li>
-                                <li><a href="#"> German </a></li>
-                            </ul>
-                        </div>
-                        <div class="offset__single">
-                            <h4 class="offset__title">Currencies</h4>
-                            <ul>
-                                <li><a href="#"> USD : Dollar </a></li>
-                                <li><a href="#"> EUR : Euro </a></li>
-                                <li><a href="#"> POU : Pound </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="offset__sosial__share">
-                        <h4 class="offset__title">Follow Us On Social</h4>
-                        <ul class="off__soaial__link">
-                            <li><a class="bg--twitter" href="#"  title="Twitter"><i class="zmdi zmdi-twitter"></i></a></li>
-                            
-                            <li><a class="bg--instagram" href="#" title="Instagram"><i class="zmdi zmdi-instagram"></i></a></li>
-
-                            <li><a class="bg--facebook" href="#" title="Facebook"><i class="zmdi zmdi-facebook"></i></a></li>
-
-                            <li><a class="bg--googleplus" href="#" title="Google Plus"><i class="zmdi zmdi-google-plus"></i></a></li>
-
-                            <li><a class="bg--google" href="#" title="Google"><i class="zmdi zmdi-google"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+                
             </div>
             <!-- End Offset MEnu -->
             <!-- End Comment -->
@@ -319,11 +213,7 @@
                                     <p>© 2017 <a href="https://freethemescloud.com/">Free themes Cloud</a>
                                     All Right Reserved.</p>
                                 </div>
-                                <ul class="footer__menu">
-                                    <li class="drop"><a href="<?php echo base_url('/');?>">Home</a></li>
-                                    <li><a href="<?php echo base_url('/buyer/shop');?>">Product</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
