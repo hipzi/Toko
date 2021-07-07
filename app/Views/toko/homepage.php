@@ -66,12 +66,12 @@
                             <div class="about-info">
                                 <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
                                     <h4>Read our story</h4>
-                                    <h2>We've been Making The Delicious Foods Since 1999</h2>
+                                    <h2>Watch Mental Health</h2>
                                 </div>
 
                                 <div class="wow fadeInUp" data-wow-delay="0.4s">
-                                    <p>Fusce hendrerit malesuada lacinia. Donec semper semper sem vitae malesuada. Proin scelerisque risus et ipsum semper molestie sed in nisi. Ut rhoncus congue lectus, rhoncus venenatis leo malesuada id.</p>
-                                    <p>Sed elementum vel felis sed scelerisque. In arcu diam, sollicitudin eu nibh ac, posuere tristique magna. You can use this template for your cafe or restaurant website. Please tell your friends about <a href="https://plus.google.com/+templatemo" target="_parent">templatemo</a>. Thank you.</p>
+                                    <p>Kami menyediakan video-video yang akan membantu Anda dalam hal yang berkaitan dengan kesehatan Mental.</p>
+                                    <p>Disini anda akan mendapatkan informasi tentang faktor-faktor penyebab gangguan kesehatan, cara mencegah atau mengatasi adanya gangguan kesehatan ental, nasehat-nasehat yang akan bermanfaat bagi Anda Please tell your friends about. </p>
                                 </div>
                             </div>
                         </div>
@@ -101,12 +101,12 @@
                         <div class="about-info">
                             <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
                                 <h4>Read our story</h4>
-                                <h2>We've been Making The Delicious Foods Since 1999</h2>
+                                <h2>Listen to Soothing Music</h2>
                             </div>
 
                             <div class="wow fadeInUp" data-wow-delay="0.4s">
-                                <p>Fusce hendrerit malesuada lacinia. Donec semper semper sem vitae malesuada. Proin scelerisque risus et ipsum semper molestie sed in nisi. Ut rhoncus congue lectus, rhoncus venenatis leo malesuada id.</p>
-                                <p>Sed elementum vel felis sed scelerisque. In arcu diam, sollicitudin eu nibh ac, posuere tristique magna. You can use this template for your cafe or restaurant website. Please tell your friends about <a href="https://plus.google.com/+templatemo" target="_parent">templatemo</a>. Thank you.</p>
+                                <p></p> Kami menyediakan daftar musik yang akan memberikan kontrol strees dan kesedihan serta membuat anda lebih santai</p>
+                                <p>Audio-audio yang disediakan adalah mp3.</p>
                             </div>
                         </div>
                     </div>
