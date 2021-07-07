@@ -31,7 +31,10 @@
                                             <td><?= $row->jumlah; ?></td>
                                             <td><?= $row->harga; ?></td>
                                             <td><?= $row->keterangan; ?></td>
-                                            <td><a class="btn btn-info">Download</a></td>
+                                            <td>
+                                                <a title="Edit" href="<?= base_url("/seller/edit/$row->id"); ?>" class="btn btn-info"><i style="font-size: 11pt;" class="fa fa-pencil"></i></a>
+                                                <a title="Delete" href="<?= base_url("/seller/delete/$row->id") ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')"><i style="font-size: 11pt;" class="fa fa-trash"></i></a>
+                                            </td>
                                         </tr>
                                     <?php
                                     }

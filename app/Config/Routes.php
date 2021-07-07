@@ -66,6 +66,9 @@ $routes->group('seller', ['filter' => 'auth'], function ($routes) {
  	$routes->get('create', 'AdminController::create');
 	$routes->get('formCreate', 'AdminController::formCreate');
 	$routes->post('save', 'AdminController::save');
+	$routes->get('edit/(:num)', 'AdminController::edit/$1');
+	$routes->post('update/(:num)', 'AdminController::update/$1');
+	$routes->get('delete/(:num)', 'AdminController::delete/$1');
 
 });
 

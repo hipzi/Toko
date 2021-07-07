@@ -84,14 +84,76 @@ class AdminController extends BaseController
         return redirect()->to('/seller/create');
 	}
 
+    function edit($id)
+    {
+        $dataProduk = $this->produk->find($id);
+        if (empty($dataProduk)) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Produk Tidak ditemukan !');
+        }
+        $data['produk'] = $dataProduk;
+        return view('admin/edit', $data);
+    }
+
+    public function update($id)
+    {
+        if (!$this->validate([
+			'nama' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'foto' => [
+				'rules' => 'uploaded[foto]|mime_in[foto,image/jpg,image/jpeg,image/gif,image/png]|max_size[foto,2048]',
+				'errors' => [
+					'uploaded' => 'Harus Ada File yang diupload',
+					'mime_in' => 'File Extention Harus Berupa jpg,jpeg,gif,png',
+					'max_size' => 'Ukuran File Maksimal 2 MB'
+                ]
+            ],
+            'jumlah' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+			'harga' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+			'keterangan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+        ])) {
+            session()->setFlashdata('error', $this->validator->listErrors());
+            return redirect()->back();
+        }
+        $this->produk->update($id, [
+            'nama' => $this->request->getVar('nama'),
+            $datafoto = $this->request->getFile('foto'),
+            $filename = $datafoto->getRandomName(),
+            'foto' => $filename,
+			'jumlah' => $this->request->getVar('jumlah'),
+			'harga' => $this->request->getVar('harga'),
+            'keterangan' => $this->request->getVar('keterangan')
+        ]);
+        session()->setFlashdata('message', 'Update Data Produk Berhasil');
+        return redirect()->to('/seller/create');
+    }
+
     function delete($id)
     {
         $dataProduk = $this->produk->find($id);
         if (empty($dataProduk)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Produk Tidak ditemukan !');
         }
-        $this->produkk->delete($id);
+        $this->produk->delete($id);
         session()->setFlashdata('message', 'Delete Data  Produk Berhasil');
-        return redirect()->to('/seller');
+        return redirect()->to('/seller/create');
     }
 }
