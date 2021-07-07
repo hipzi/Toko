@@ -76,58 +76,14 @@ class ShopController extends BaseController
         return redirect()->to('/');
 	}
 
-    public function update($id)
+    public function delete($id)
     {
-        if (!$this->validate([
-			'nama' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-            'jumlah' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-			'harga' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-			'keterangan' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-        ])) {
-            session()->setFlashdata('error', $this->validator->listErrors());
-            return redirect()->back();
+        $dataTransaksi = $this->transaksi->find($id);
+        if (empty($dataTransaksi)) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Transaksi Tidak ditemukan !');
         }
-        
-        if (filesize($this->request->getFile('foto')) == false){ 
-            $this->produk->update($id, [
-                'nama' => $this->request->getVar('nama'),
-                'jumlah' => $this->request->getVar('jumlah'),
-                'harga' => $this->request->getVar('harga'),
-                'keterangan' => $this->request->getVar('keterangan')
-            ]);
-        } else {
-            $this->produk->update($id, [
-                'nama' => $this->request->getVar('nama'),
-                $datafoto = $this->request->getFile('foto'),
-                $filename = $datafoto->getRandomName(),
-                'foto' => $filename,
-                'jumlah' => $this->request->getVar('jumlah'),
-                'harga' => $this->request->getVar('harga'),
-                'keterangan' => $this->request->getVar('keterangan')
-            ]);
-            $datafoto->move('uploads/foto/', $filename);
-        }
-        session()->setFlashdata('message', 'Update Data Produk Berhasil');
-        return redirect()->to('/seller/create');
+        $this->transaksi->delete($id);
+        session()->setFlashdata('message', 'Delete Data  Transaksi Berhasil');
+        return redirect()->to('/buyer/cart');
     }
 }

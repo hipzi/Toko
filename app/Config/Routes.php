@@ -53,6 +53,7 @@ $routes->group('buyer', ['filter' => 'auth'], function ($routes) {
 	$routes->post('change_quantity/(:num)', 'ShopController::change_quantity/$1');
 	$routes->get('checkout/(:any)', 'ShopController::checkout/$1');
 	$routes->post('bukti_pembayaran/(:any)', 'ShopController::bukti_pembayaran/$1');
+	$routes->get('delete/(:num)', 'ShopController::delete/$1');
 });
 
 $routes->group('seller', ['filter' => 'auth'], function ($routes) {
