@@ -21,7 +21,11 @@
                             </button>
                         </div>
                     <?php endif; ?>
+<<<<<<< HEAD
                     <form method="post" action="<?= base_url('/seller/save') ?>" enctype="multipart/form-data">
+=======
+                    <form method="post" action="<?= base_url('/seller/save') ?>">
+>>>>>>> 500b1d90f8b904a40b4a8a50596b01d11d066706
                         <?= csrf_field(); ?>
                         
                         <div class="form-group">
