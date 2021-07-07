@@ -55,7 +55,7 @@ class TransaksiModel extends Model
 	public function getCart()
     {
         return $this->db->table('transaksi')
-        ->select('transaksi.id as idTransaksi', 'transaksi.jumlah as jmlTransaksi', 'transaksi.*')
+        ->select('transaksi.id as idTransaksi')
 		->select('transaksi.jumlah as jmlTransaksi')
 		->select('transaksi.*')
 		->select('users.id as idUser')

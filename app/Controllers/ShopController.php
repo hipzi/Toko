@@ -52,4 +52,82 @@ class ShopController extends BaseController
         session()->setFlashdata('message', 'Update Jumlah Produk Berhasil');
         return redirect()->to('/buyer/cart');
 	}
+
+    public function checkout($items)
+	{
+        $data['id_transaksi'] = json_decode($items);
+        return view('toko/checkout', $data);
+	}
+
+    public function bukti_pembayaran($items)
+	{
+        $data['id_transaksi'] = json_decode($items);
+        $foto = new TransaksiModel();
+		$datafoto = $this->request->getFile('bukti_pembayaran');
+		$filename = $datafoto->getRandomName();
+        foreach ($data['id_transaksi'] as $row) {
+            $int_row = (int)$row;
+            $this->transaksi->update($int_row, [
+                'bukti_pembayaran' => $filename
+            ]);
+        }
+        $datafoto->move('uploads/bukti/', $filename);
+        session()->setFlashdata('message', 'Berhasil mengupload bukti pembayaran');
+        return redirect()->to('/');
+	}
+
+    public function update($id)
+    {
+        if (!$this->validate([
+			'nama' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'jumlah' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+			'harga' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+			'keterangan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+        ])) {
+            session()->setFlashdata('error', $this->validator->listErrors());
+            return redirect()->back();
+        }
+        
+        if (filesize($this->request->getFile('foto')) == false){ 
+            $this->produk->update($id, [
+                'nama' => $this->request->getVar('nama'),
+                'jumlah' => $this->request->getVar('jumlah'),
+                'harga' => $this->request->getVar('harga'),
+                'keterangan' => $this->request->getVar('keterangan')
+            ]);
+        } else {
+            $this->produk->update($id, [
+                'nama' => $this->request->getVar('nama'),
+                $datafoto = $this->request->getFile('foto'),
+                $filename = $datafoto->getRandomName(),
+                'foto' => $filename,
+                'jumlah' => $this->request->getVar('jumlah'),
+                'harga' => $this->request->getVar('harga'),
+                'keterangan' => $this->request->getVar('keterangan')
+            ]);
+            $datafoto->move('uploads/foto/', $filename);
+        }
+        session()->setFlashdata('message', 'Update Data Produk Berhasil');
+        return redirect()->to('/seller/create');
+    }
 }

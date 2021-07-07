@@ -93,6 +93,7 @@
                         <tbody>
                         <?php
                         $total_harga = 0;
+                        $items = array();  
                         foreach ($cart as $row) {
                         ?>
                             <tr>
@@ -108,7 +109,8 @@
                                 <td class="product-remove"><a href="#">X</a></td>
                             </tr>
                         <?php
-                        $total_harga += $harga_perbarang;  
+                        $total_harga += $harga_perbarang;
+                        $items[] = $row['idTransaksi'];
                         }
                         ?>
                         </tbody>
@@ -146,7 +148,8 @@
                                 </tbody>
                             </table>
                             <div class="wc-proceed-to-checkout">
-                                <a href="<?php echo base_url('/checkout');?>">Proceed to Checkout</a>
+                                <!-- <a href="<?php// echo base_url('/checkout');?>">Proceed to Checkout</a> -->
+                                <a href="<?= base_url("/buyer/checkout/". json_encode($items)); ?>"> Proceed to Checkout</a>
                             </div>
                         </div>
                     </div>

@@ -32,18 +32,6 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-// $routes->get('/shop', 'Home::shop');
-// $routes->get('/cart', 'Home::cart');
-// $routes->get('/wishlist', 'Home::wishlist');
-// $routes->get('/checkout', 'Home::checkout');
-
-// $routes->get('/admin', 'Home::admin');
-
-// $routes->get('/user/login', 'UsersController::login');
-// $routes->get('/user/register', 'UsersController::register');
-// $routes->post('/user/data_register', 'UsersController::data_register');
-// $routes->post('/user/data_login', 'UsersController::data_login');
-// $routes->get('/user/logout', 'UserController::logout');
 
 $routes->get('/', 'Home::index');
 $routes->get('/quotes', 'Home::quotes');
@@ -62,8 +50,9 @@ $routes->group('buyer', ['filter' => 'auth'], function ($routes) {
     $routes->get('shop', 'ShopController::index');
 	$routes->get('cart', 'ShopController::cart');
 	$routes->post('add_cart', 'ShopController::add_cart');
-	$routes->post('checkout', 'ShopController::checkout');
 	$routes->post('change_quantity/(:num)', 'ShopController::change_quantity/$1');
+	$routes->get('checkout/(:any)', 'ShopController::checkout/$1');
+	$routes->post('bukti_pembayaran/(:any)', 'ShopController::bukti_pembayaran/$1');
 });
 
 $routes->group('seller', ['filter' => 'auth'], function ($routes) {
@@ -74,7 +63,6 @@ $routes->group('seller', ['filter' => 'auth'], function ($routes) {
 	$routes->get('edit/(:num)', 'AdminController::edit/$1');
 	$routes->post('update/(:num)', 'AdminController::update/$1');
 	$routes->get('delete/(:num)', 'AdminController::delete/$1');
-
 });
 
 
