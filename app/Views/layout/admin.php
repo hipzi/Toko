@@ -32,7 +32,7 @@
     <div id="app">
 
     <body class="nav-md admin">
-    <div class="container body admin">
+    <div class="container body admin" >
         <div class="main_container">
             <div id="dashboard" class="col-md-3 left_col">
             <div class="left_col scroll-view">
@@ -51,32 +51,13 @@
                     <!-- Home, List, Calendar, Report -->
                     <ul class="nav side-menu">
                     <li><a><i class="fa fa-edit"></i> Product <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                        <li><a href="{{ route('booking.new', ['tipe_zoom'=>'webinar']) }}">Booking Webinar</a></li>
-                        <li><a href="{{ route('booking.list', ['tipe_zoom'=>'webinar']) }}">Webinar Saya</a></li>
-                        <!-- @if(auth()->user()->isAdmin()) -->
-                        <li><a href="{{ route('admin.list', ['tipe_zoom'=>'webinar']) }}">Daftar Webinar</a></li>
-                        <li><a href="{{ route('admin.aprove', ['tipe_zoom'=>'webinar']) }}">Riwayat</a></li>
-                        <!-- @endif -->
-                        </ul>
+                        
                     </li>
                     <!-- @if(!auth()->user()->isMahasiswa()) -->
                     <li><a><i class="fa fa-edit"></i> Users <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                        <li><a href="{{ route('booking.new', ['tipe_zoom'=>'meeting']) }}">Booking Meeting</a></li>
-                        <li><a href="{{ route('booking.list', ['tipe_zoom'=>'meeting']) }}">Meeting Saya</a></li>
-                        <!-- @if(auth()->user()->isAdmin()) -->
-                        <li><a href="{{ route('admin.list', ['tipe_zoom'=>'meeting']) }}">Daftar Meeting</a></li>
-                        <li><a href="{{ route('admin.aprove', ['tipe_zoom'=>'meeting']) }}">Riwayat</a></li>
-                        <!-- @endif -->
-                        </ul>
+                        
                     </li>
                     <!-- @endif -->
-                    <li><a><i class="fa fa-desktop"></i> Setting <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                        <li><a href="{{ route('calendar.view') }}">Calendar</a></li>
-                        </ul>
-                    </li>
                     </ul>
                 </div>
 
@@ -89,11 +70,11 @@
 
         <!-- top navigation -->
         <div class="top_nav">
-            <div class="nav_menu">
+            <div class="nav_menu" >
                 <div class="nav toggle">
                     <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 </div>
-                <nav class="nav navbar-nav">
+                <nav class="nav navbar-nav" >
                 <ul class=" navbar-right">
                     <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a style="color: white; text-decoration: none;" href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
