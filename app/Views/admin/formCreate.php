@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="submit" value="Simpan" class="btn btn-block" style="color:white; background-color:#d67f7d" />
+                            <input type="submit" value="Simpan" class="btn btn-block" style="color:white; background-color:#3b413c" />
                         </div>
 
                     </form>

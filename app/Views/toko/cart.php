@@ -117,16 +117,6 @@
                 </div>
                 <div class="row">
                     <div class="col-md-8 col-sm-7 col-xs-12">
-                        <div class="buttons-cart">
-                            <input type="submit" value="Update Cart" />
-                            <a href="#">Continue Shopping</a>
-                        </div>
-                        <div class="coupon">
-                            <h3>Coupon</h3>
-                            <p>Enter your coupon code if you have one.</p>
-                            <input type="text" placeholder="Coupon code" />
-                            <input type="submit" value="Apply Coupon" />
-                        </div>
                     </div>
                     <div class="col-md-4 col-sm-5 col-xs-12">
                         <div class="cart_totals">
@@ -147,7 +137,6 @@
                                 </tbody>
                             </table>
                             <div class="wc-proceed-to-checkout">
-                                <!-- <a href="<?php// echo base_url('/checkout');?>">Proceed to Checkout</a> -->
                                 <a href="<?= base_url("/buyer/checkout/". json_encode($items)); ?>"> Proceed to Checkout</a>
                             </div>
                         </div>

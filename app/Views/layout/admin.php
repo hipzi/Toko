@@ -45,25 +45,20 @@
 
                 <br />
 
-                <!-- @auth -->
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                 <div class="menu_section">
-                    <!-- Home, List, Calendar, Report -->
                     <ul class="nav side-menu">
                     <li><a><i class="fa fa-edit"></i> Product <span class="fa fa-chevron-down"></span></a>
-                        
+                        <ul class="nav child_menu">
+                        <li><a href="<?php echo base_url('/seller/create'); ?>">Daftar Produk</a></li>
+                        <li><a href="<?php echo base_url('/seller/formCreate'); ?>">Tambah Produk</a></li>
+                        </ul>
                     </li>
-                    <!-- @if(!auth()->user()->isMahasiswa()) -->
-                    <li><a><i class="fa fa-edit"></i> Users <span class="fa fa-chevron-down"></span></a>
-                        
-                    </li>
-                    <!-- @endif -->
                     </ul>
                 </div>
 
             </div>
-            <!-- @endauth -->
             <!-- /sidebar menu -->
 
             </div>
@@ -79,13 +74,7 @@
                 <ul class=" navbar-right">
                     <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a style="color: white; text-decoration: none;" href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                        <!-- @auth
-                        @if(auth()->user()->isAdmin()) -->
                         <i class="fa fa-user admin"></i>Admin
-                        <!-- @else -->
-                        <!-- <i class="fa fa-user admin"></i>User -->
-                        <!-- @endif -->
-                        <!-- @endauth -->
                     </a>
                     <div style="margin: auto" class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item"  href="<?php echo base_url('/user/logout');?>"><i class="fa fa-sign-out pull-right"></i>Log Out</a>

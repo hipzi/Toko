@@ -38,7 +38,7 @@
                         <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="images/logo/logo.png" alt="logo">
+                                    <img src="<?php echo base_url('images/logo/logo.png');?>" alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -52,6 +52,7 @@
                                         <ul class="dropdown">
                                             <li><a href="<?php echo base_url('/quotes');?>">Quotes</a></li>
                                             <li><a href="<?php echo base_url('/video');?>">Video</a></li>
+                                            <li><a href="<?php echo base_url('/sound');?>">Sound</a></li>
                                         </ul>
                                     </li>
                                     <li class="drop"><a href="<?php echo base_url('/buyer/shop');?>">Shop</a>
@@ -210,10 +211,9 @@
                         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                             <div class="copyright__inner">
                                 <div class="copyright">
-                                    <p>© 2017 <a href="https://freethemescloud.com/">Free themes Cloud</a>
-                                    All Right Reserved.</p>
+                                    <p>© 2021 <a href="#" >FP PBKK</a>
+                                    </p>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
