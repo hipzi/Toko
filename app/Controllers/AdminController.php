@@ -103,14 +103,6 @@ class AdminController extends BaseController
                     'required' => '{field} Harus diisi'
                 ]
             ],
-            'foto' => [
-				'rules' => 'uploaded[foto]|mime_in[foto,image/jpg,image/jpeg,image/gif,image/png]|max_size[foto,2048]',
-				'errors' => [
-					'uploaded' => 'Harus Ada File yang diupload',
-					'mime_in' => 'File Extention Harus Berupa jpg,jpeg,gif,png',
-					'max_size' => 'Ukuran File Maksimal 2 MB'
-                ]
-            ],
             'jumlah' => [
                 'rules' => 'required',
                 'errors' => [
@@ -133,15 +125,26 @@ class AdminController extends BaseController
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back();
         }
-        $this->produk->update($id, [
-            'nama' => $this->request->getVar('nama'),
-            $datafoto = $this->request->getFile('foto'),
-            $filename = $datafoto->getRandomName(),
-            'foto' => $filename,
-			'jumlah' => $this->request->getVar('jumlah'),
-			'harga' => $this->request->getVar('harga'),
-            'keterangan' => $this->request->getVar('keterangan')
-        ]);
+        
+        if (filesize($this->request->getFile('foto')) == false){ 
+            $this->produk->update($id, [
+                'nama' => $this->request->getVar('nama'),
+                'jumlah' => $this->request->getVar('jumlah'),
+                'harga' => $this->request->getVar('harga'),
+                'keterangan' => $this->request->getVar('keterangan')
+            ]);
+        } else {
+            $this->produk->update($id, [
+                'nama' => $this->request->getVar('nama'),
+                $datafoto = $this->request->getFile('foto'),
+                $filename = $datafoto->getRandomName(),
+                'foto' => $filename,
+                'jumlah' => $this->request->getVar('jumlah'),
+                'harga' => $this->request->getVar('harga'),
+                'keterangan' => $this->request->getVar('keterangan')
+            ]);
+            $datafoto->move('uploads/foto/', $filename);
+        }
         session()->setFlashdata('message', 'Update Data Produk Berhasil');
         return redirect()->to('/seller/create');
     }

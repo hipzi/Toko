@@ -31,15 +31,16 @@
 
                         <div class="form-group">
                             <label for="foto" class="form-label">Foto</label>
+
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="file" name="foto" class="form-control" id="foto">
+                                    <img src="<?= base_url('uploads/foto/' . $produk->foto) ?>" id="foto" width="400px">
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <img src="<?= base_url('uploads/foto/' . $produk->foto) ?>" id="foto" width="400px">
+                                    Ubah Foto<input type="file" name="foto" class="form-control" id="foto" >
                                 </div>
                             </div>
                         </div>
