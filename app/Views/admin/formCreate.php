@@ -21,7 +21,7 @@
                             </button>
                         </div>
                     <?php endif; ?>
-                    <form method="post" action="<?= base_url('save') ?>">
+                    <form method="post" action="<?= base_url('/seller/save') ?>" enctype="multipart/form-data">
                         <?= csrf_field(); ?>
                         
                         <div class="form-group">
@@ -30,8 +30,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="foto">Foto</label>
-                            <input type="text" class="form-control" id="foto" name="foto" value="<?= old('foto'); ?>">
+                            <label for="foto" class="form-label">Foto</label>
+                            <input type="file" class="form-control" id="foto" name="foto" value="<?= old('foto'); ?>">
                         </div>
 
                         <div class="form-group">
@@ -45,9 +45,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="Keterangan">Keterangan</label>
-                            <textarea style="resize: none;" class="form-control" name="Keterangan" id="Keterangan"><?= old('Keterangan') ?></textarea>
-                        </div>
+                            <label for="keterangan">Keterangan</label>
+                            <textarea style="resize: none;" class="form-control" name="keterangan" id="keterangan"><?= old('keterangan') ?></textarea>
                         </div>
 
                         <div class="form-group">

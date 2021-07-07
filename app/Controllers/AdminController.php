@@ -13,7 +13,7 @@ class AdminController extends BaseController
             echo 'Access denied';
             exit;
         }
-        $this->produk = new ProdukModel;
+        $this->produk = new ProdukModel();
     }
 	public function index()
 	{
@@ -28,6 +28,7 @@ class AdminController extends BaseController
     {
         return view('admin/formCreate');
     }
+
     public function save()
 	{
 		if (!$this->validate([
@@ -38,9 +39,11 @@ class AdminController extends BaseController
                 ]
             ],
             'foto' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
+				'rules' => 'uploaded[foto]|mime_in[foto,image/jpg,image/jpeg,image/gif,image/png]|max_size[foto,2048]',
+				'errors' => [
+					'uploaded' => 'Harus Ada File yang diupload',
+					'mime_in' => 'File Extention Harus Berupa jpg,jpeg,gif,png',
+					'max_size' => 'Ukuran File Maksimal 2 MB'
                 ]
             ],
             'jumlah' => [
@@ -65,14 +68,18 @@ class AdminController extends BaseController
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back()->withInput();
         }
+        $foto = new ProdukModel();
 
-        $this->seller->insert([
+        $this->produk->insert([
 			'nama' => $this->request->getVar('nama'),
-            'foto' => $this->request->getVar('foto'),
+            $datafoto = $this->request->getFile('foto'),
+            $filename = $datafoto->getRandomName(),
+            'foto' => $filename,
 			'jumlah' => $this->request->getVar('jumlah'),
 			'harga' => $this->request->getVar('harga'),
             'keterangan' => $this->request->getVar('keterangan')
         ]);
+        $datafoto->move('uploads/foto/', $filename);
         session()->setFlashdata('message', 'Tambah Data produk Berhasil');
         return redirect()->to('/seller/create');
 	}
