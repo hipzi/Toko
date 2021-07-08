@@ -52,4 +52,15 @@ class ShopController extends BaseController
         session()->setFlashdata('message', 'Update Jumlah Produk Berhasil');
         return redirect()->to('/buyer/cart');
 	}
+
+    public function delete($id)
+    {
+        $dataTransaksi = $this->transaksi->find($id);
+        if (empty($dataTransaksi)) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Transaksi Tidak ditemukan !');
+        }
+        $this->transaksi->delete($id);
+        session()->setFlashdata('message', 'Delete Data  Transaksi Berhasil');
+        return redirect()->to('/buyer/cart');
+    }
 }

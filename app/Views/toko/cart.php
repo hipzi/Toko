@@ -104,9 +104,8 @@
                                     <!-- <a href="#" type="button" class="btn btn-success btn-md" class="btn btn-info" style="font-size: 10pt;" data-toggle="modal" data-target="#myModal<?php echo $row['idTransaksi']; ?>">Ubah</a> -->
                                 </td>
                                 <td class="product-subtotal"><?=$harga_perbarang = $row['jmlTransaksi']*$row['harga'];?></td>
-                                
-                                <td class="product-remove"><a href="#">X</a></td>
-                            </tr>
+                                <td class="product-remove"><a href="<?= base_url("/buyer/delete/" . $row['idTransaksi']); ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">X</a></td>          
+                                </tr>
                         <?php
                         $total_harga += $harga_perbarang;  
                         }
